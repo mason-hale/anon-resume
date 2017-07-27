@@ -7,4 +7,4 @@ from django.shortcuts import render
 
 def resume_list(request):
 	print("lesgitit")
-	return render(request, 'resume_list.html', {})
+	return render(request, 'resume/resume_list.html', {})
