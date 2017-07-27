@@ -1,0 +1,36 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'resume/style.css' %}" />
+<title>Upload New Resume</title>
+
+<div class="form">
+<div class="title">Upload New Resume</div>
+<form action="{% url 'resume:upload' %}" enctype="multipart/form-data" method="post">
+{% csrf_token %}
+
+    <div class="entry">
+        <input type="file" name="up_res" size="40" id="up_res">
+    </div>
+    <br>
+    <div class="entry">
+        <label for="dept">Department: </label>
+        <select name="dept" id="dept">
+            {% for d in depts %}
+                <option value="{{ d }}">{{ d }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <br>
+    <div class="entry2">
+        <span>
+            <label for="extra">Extra information: </label>
+            <input type="text" name="extra" id="extra" value="">
+        </span>
+
+    </div>
+    <br>
+    <div class="submit">
+    <span id="search"><button type="submit">Submit</button></span>
+    </div>
+</form>
+</div>
