@@ -7,6 +7,9 @@ from .models import Resume
 depts = ['Engineering', 'People', 'Data Science', 'Services', 'Commercial', 'Finance', 'Global Business Operations']
 depts.sort()
 
+def home(request):
+	return render(request, 'resume/index.html', {})
+
 def resume_list(request):
 	print("lesgitit")
 	return render(request, 'resume/resume_list.html', {})
